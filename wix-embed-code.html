@@ -1,0 +1,30 @@
+<!-- 
+  LEEDERVILLE CRICKET CLUB - WIX EMBED SNIPPET
+  Instructions:
+  1. In Wix Editor / Studio, add an "Embed HTML" or "Custom Code" block.
+  2. Paste this snippet.
+  3. Replace 'YOUR_DEPLOYED_URL_HERE' with your actual deployed URL (e.g. https://leedervillecc.vercel.app or your custom domain).
+-->
+
+<div id="leedy-container" style="position: relative; width: 100%; min-height: 100vh; overflow: hidden;">
+  <iframe 
+    id="leedy-frame"
+    src="YOUR_DEPLOYED_URL_HERE" 
+    style="width: 100%; min-height: 100vh; border: none; display: block;" 
+    allow="clipboard-write"
+    loading="lazy"
+  ></iframe>
+</div>
+
+<script>
+  // Auto-fit height helper for Wix iframes
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'SET_LEEDY_HEIGHT') {
+      var frame = document.getElementById('leedy-frame');
+      if (frame) {
+        frame.style.height = e.data.height + 'px';
+      }
+    }
+  });
+</script>
+
